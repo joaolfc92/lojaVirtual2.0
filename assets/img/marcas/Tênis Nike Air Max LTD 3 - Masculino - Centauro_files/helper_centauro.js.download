@@ -1,0 +1,33 @@
+var _st_page = false;
+
+if (document.querySelector('.product-item') != null) {
+    _view = {
+        url: location.href.split('?')[0]
+    };
+
+    _st_app.vp(_view);
+} else if (location.pathname.indexOf('/carrinho') > -1) {
+    _st_page = 'cart';
+
+    var _st_cart = {
+        url: [],
+        qty: []
+    };
+
+    var itens = document.querySelectorAll('.container-prod-cart .text a');
+
+    for(i = 0; i < itens.length; i++) {
+        _st_cart.url.push(itens[i].href.split('?')[0]);
+        _st_cart.qty.push(1);
+    }
+
+    if (_st_cart.url.length > 0) {
+        _st_app.send_cart(_st_cart);
+    }
+}
+
+if(document.cookie.indexOf('centauro.customer') > -1) {
+    _st_page = 'ignore_prods';
+}
+
+_st_app.set_page(_st_page);

@@ -1,0 +1,32 @@
+.rodape{
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+}
+
+.footer__title,.footer-copyright {
+	color:white;
+	font-weight: bolder;
+}
+
+.list-unstyled li a {
+	color:#ccc;
+	text-decoration: none;
+}
+
+.list-unstyled li a:hover{
+	color:#f4bb10;
+}
+
+.rodape__social{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.fab img{
+	height: 70px;
+	width: 70px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
